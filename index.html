@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MSX Image Converter</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="sidebar">
+          <div class="upload-zone" id="dropZone">
+            <input type="file" id="fileInput" accept="image/*" hidden>
+            <div class="upload-content">
+              <div class="icon">📁</div>
+              <h3>Glissez une image</h3>
+              <button id="uploadButton">Choisir un fichier</button>
+            </div>
+          </div>
+
+          <div class="controls">
+            <div class="mode-selector">
+              <h4>Mode de conversion</h4>
+              <select id="conversionMode">
+                <option value="screen5">Screen 5 (16 couleurs)</option>
+                <option value="screen7">Screen 7 (512x212)</option>
+                <option value="screen8">Screen 8 (256 couleurs)</option>
+                <option value="screen12">Screen 12 (YJK)</option>
+              </select>
+            </div>
+
+            <div class="options">
+              <h4>Options</h4>
+              <label>
+                <input type="checkbox" id="dithering">
+                Tramage
+              </label>
+              <label>
+                <input type="checkbox" id="aspectRatio" checked>
+                Conserver les proportions
+              </label>
+            </div>
+
+            <button id="convertButton" disabled>Convertir</button>
+            <div id="downloadButtons" class="download-buttons"></div>
+          </div>
+        </div>
+
+        <div class="preview-zone">
+          <div class="preview-container">
+            <div class="preview-box">
+              <h3>Image originale</h3>
+              <canvas id="originalPreview"></canvas>
+            </div>
+            <div class="preview-box">
+              <h3>Image convertie</h3>
+              <canvas id="convertedPreview"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
